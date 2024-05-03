@@ -22,6 +22,7 @@ jobs:
     - name: Running quiz tests
       run: |
         cd front/src/tests/quiz_tests
+        pip install pytest 
         python -m pytest -vv .
 
     - name: Running auth tests
