@@ -15,9 +15,14 @@ jobs:
       run: |
         sudo apt-get update
         pip install -r front/requirements.txt
-        
+
     - name: List contents of tests directory
-      run: ls -l front/src/tests
+      run: ls front/src/tests
+
+    - name: Running quiz tests
+      run: |
+        cd front/src/tests/quiz_tests
+        python -m pytest -vv .
 
     - name: Running auth tests
       run: |
@@ -27,8 +32,3 @@ jobs:
       env:
           CLIENT_YANDEX: ${{ secrets.CLIENT_YANDEX }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-
-    - name: Running quiz tests
-      run: |
-        cd front/src/tests/quiz_tests
-        python -m pytest -vv .
