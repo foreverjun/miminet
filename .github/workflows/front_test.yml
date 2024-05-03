@@ -15,6 +15,9 @@ jobs:
       run: |
         sudo apt-get update
         pip install -r front/requirements.txt
+        
+    - name: List contents of tests directory
+      run: ls -l front/src/tests
 
     - name: Running auth tests
       run: |
