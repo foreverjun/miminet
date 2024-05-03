@@ -16,11 +16,9 @@ jobs:
         sudo apt-get update
         pip install -r front/requirements.txt
 
-    - name: List contents of tests directory
-      run: ls front/src/tests
-
     - name: Running quiz tests
       run: |
+        echo "export PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
         cd front/src/tests/quiz_tests
         pip install pytest 
         python -m pytest -vv .
