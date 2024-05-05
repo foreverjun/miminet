@@ -18,8 +18,7 @@ jobs:
 
     - name: Running quiz tests
       run: |
-        export PYTHONPATH="$PYTHONPATH:front/src"
-        ls $PYTHONPATH
+        export PYTHONPATH="$PYTHONPATH:/front/src"
         echo "PYTHONPATH=$PYTHONPATH"
         cd front/src/tests/quiz_tests
         ls
