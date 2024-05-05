@@ -18,15 +18,17 @@ jobs:
 
     - name: Running quiz tests
       run: |
-        export PYTHONPATH="$PYTHONPATH:/front/src"
-        cd front/src/tests/quiz_tests
+        cd front/src
+        export PYTHONPATH="$PYTHONPATH:$(pwd)"
+        cd tests/quiz_tests
         pip install pytest 
         python -m pytest -vv .
 
     - name: Running auth tests
       run: |
-        export PYTHONPATH="$PYTHONPATH:/front/src"
-        cd front/src/tests/auth_tests
+        cd front/src
+        export PYTHONPATH="$PYTHONPATH:$(pwd)"
+        cd tests/auth_tests
         pip install pytest pytest_mock
         python -m pytest -vv .
       env:
