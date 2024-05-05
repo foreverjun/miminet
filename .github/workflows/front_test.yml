@@ -18,8 +18,10 @@ jobs:
 
     - name: Running quiz tests
       run: |
-        export PYTHONPATH="$PYTHONPATH:/front/src"
+        export PYTHONPATH="$PYTHONPATH:front/src"
+        ls
         cd front/src/tests/quiz_tests
+        ls
         pip install pytest 
         python -m pytest -vv .
 
