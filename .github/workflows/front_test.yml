@@ -27,6 +27,7 @@ jobs:
 
     - name: Running auth tests
       run: |
+        echo "PYTHONPATH: $PYTHONPATH"
         cd front/src/tests/auth_tests
         pip install pytest pytest_mock
         python -m pytest -vv .
