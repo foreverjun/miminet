@@ -18,10 +18,10 @@ jobs:
 
     - name: Running quiz tests
       run: |
-        export PYTHONPATH="$PYTHONPATH:/front/src"
-        echo "PYTHONPATH=$PYTHONPATH"
-        cd front/src/tests/quiz_tests
-        ls
+        cd front/src
+        echo "export PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
+        export PYTHONPATH="$PYTHONPATH:$(pwd)"
+        cd tests/quiz_tests
         pip install pytest 
         python -m pytest -vv .
 
